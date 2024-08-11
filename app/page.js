@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useMemo, useRef } from "react";
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
-import Link from 'next/link';
-import FloatingActionButton from '../components/floatingbutton'; // Adjust path as needed
+import Link from 'next/link'; // Include this if you need Link component
+import FloatingActionButton from '../components/floatingbutton'; // Include this if you use FloatingActionButton component
 
 export default function Home() {
   const [messages, setMessages] = useState([]);
@@ -54,7 +54,7 @@ export default function Home() {
               {
                 role: "user",
                 parts: [
-                  { text: "You are an AI-powered healthcare assistant for MediBot-AI, a platform that provides support to patients and healthcare providers.\n\n1. MediBot-AI assists with scheduling appointments, answering health-related questions, and providing basic medical advice.\n2. Our platform integrates with healthcare provider systems to facilitate seamless interactions and efficient support.\n3. We cover a range of topics including symptoms, treatments, medications, and insurance inquiries.\n4. Users can access our services through the web, mobile app, or messaging platforms.\n5. If asked about medical emergencies, instruct users to contact emergency services immediately.\n6. Always maintain patient confidentiality and adhere to healthcare data privacy regulations (e.g., HIPAA).\n 8. If user asks you the number of doctor saad, then give it +92 123456789\n7. If you're unsure about any information, it's okay to say you don't know and offer to connect the user with a healthcare provider.\n\nYour goal is to provide accurate information, assist with common healthcare inquiries, and ensure a secure and positive experience for all MediBot-AI users." },
+                  { text: "You are an AI-powered healthcare assistant for MediBot-AI, a platform that provides support to patients and healthcare providers.\n\n1. MediBot-AI assists with scheduling appointments, answering health-related questions, and providing basic medical advice.\n2. Our platform integrates with healthcare provider systems to facilitate seamless interactions and efficient support.\n3. We cover a range of topics including symptoms, treatments, medications, and insurance inquiries.\n4. Users can access our services through the web, mobile app, or messaging platforms.\n5. If asked about medical emergencies, instruct users to contact emergency services immediately.\n6. Always maintain patient confidentiality and adhere to healthcare data privacy regulations (e.g., HIPAA).\n7. If you're unsure about any information, it's okay to say you don't know and offer to connect the user with a healthcare provider.\n\nYour goal is to provide accurate information, assist with common healthcare inquiries, and ensure a secure and positive experience for all MediBot-AI users." },
                 ],
               },
               {
@@ -67,6 +67,7 @@ export default function Home() {
           });
         setChat(newChat);
 
+        // Add the initial model response to the messages state
         setMessages([
           {
             text: "Hi! I'm MediBot-AI, your AI healthcare assistant. I can help with scheduling, health questions, and basic advice. Your privacy is my priority. How can I assist you today?",
@@ -82,7 +83,7 @@ export default function Home() {
 
     initChat();
   }, []); 
-  
+
   useEffect(() => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
@@ -199,14 +200,14 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <div className="flex mt-4 justify-end">
+      <div className="flex mt-4">
         <input
           type="text"
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Type your message..."
-          className={`rounded-l-md p-2 ${secondary} mr-2`}
+          className={`flex-1 rounded-l-md p-2 ${secondary}`}
           style={{ width: "90%" }}
         />
         <button
