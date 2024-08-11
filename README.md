@@ -1,14 +1,21 @@
 Next.js Project
+
 This is a Next.js project bootstrapped with create-next-app.
 
 Project Overview
+
 This project is an AI-powered healthcare assistant application built using Next.js and the OpenAI API. The application is designed to provide healthcare support through a chatbot interface, integrating with advanced AI models to assist users with scheduling appointments, answering health-related questions, and providing basic medical advice.
 
 Features
+
 Chatbot Interface: A user-friendly chat interface allows users to interact with the AI assistant.
+
 Themed Appearance: Users can switch between light and dark themes to enhance their experience.
+
 AI Integration: Utilizes OpenAI’s generative models to provide responses based on user input.
+
 Safety Settings: Configured with safety settings to filter out harmful content.
+
 ## Getting Started
 
 First, run the development server:
