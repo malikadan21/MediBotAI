@@ -1,4 +1,4 @@
-Next.js Project
+MediBot-AI -Healthcare Assistant-
 
 This is a Next.js project bootstrapped with create-next-app.
 
